@@ -1,0 +1,64 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Overview
+
+- **Framework & Technologies**: Next.js 15, Supabase, Shadcn UI.
+- **Rendering Strategy**: Use server components as frequently as possible. Employ SSG/SSR where appropriate for performance and SEO benefits.
+
+# Directory & File Structure
+
+## App Directory (Next.js App Folder)
+
+- **Purpose**: Contains only the essential routing and layout files.
+- **Allowed Files/Folders**:
+  - `page.tsx`: Main page component for each route.
+  - `route.ts`: API route definitions.
+  - `layout.tsx`: Layout components defining overall structure.
+  - `template.tsx`: Template for consistent page rendering.
+  - Additional files: `sitemap.ts`, `robots.ts`, `not-found.tsx`, `favicons`, etc.
+
+## Features Directory (`@/features`)
+
+- **Structure**: Each page should have its own folder named after the page (e.g., `@/features/Home`).
+- **Page Exports**: Each page must be exported via an `index.tsx` in its folder.
+- **Subdirectories**:
+  - **components/**: Page-specific components.
+  - **actions/**: Page-specific actions (e.g., form submissions, API calls).
+  - **assets/**: Page-specific assets (images, styles, etc.).
+- **Shared Sections**: Common/shared page sections should be placed in `@/features/Shared`.
+
+## Components Directory (`@/components`)
+
+- **Large Shared Components**: For components used across multiple pages (e.g., `Header.tsx`, `Footer.tsx`).
+- **UI Library Components**: Smaller, reusable UI elements (Shadcn-based) should be defined in `@/components/ui`.
+
+## Services Directory (`@/services`)
+
+- **Service Modules**: Define services such as `EmailService` and `AIService` here.
+- **Usage**: Centralize business logic and third-party integrations.
+
+# Component & Code Organization
+
+- **Server Components**: Favor server components to minimize client-side bundle size and leverage SSR capabilities.
+- **Component Splitting**:
+  - **Large Components**: Split into multiple, focused files.
+    - _Example_: `LandingPage.tsx` can be split into several sections.
+    - _Example_: `RichTextEditor` can be split into `Toolbar.tsx`, `EditorArea.tsx`, and `AIToolbar.tsx`.
+- **Best Practices**:
+  - Keep business logic on the server side when possible.
+  - Use SSG for static content and SSR for dynamic content to optimize performance.
+  - Forms should be created with the shadcn ui Form component and zod validation should be applied
+
+# Additional Guidelines
+
+- **Consistency**: Maintain a consistent file naming convention and directory structure throughout the project.
+- **Modularity**: Write modular, reusable code by segregating concerns (e.g., separating UI components from business logic).
+- **Optimization**: Use Next.js features (dynamic routing, server components, etc.) to optimize performance and SEO.

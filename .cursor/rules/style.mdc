@@ -1,0 +1,60 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Podjetniški klub Style Guidelines
+
+This document outlines the style rules for the TeleFinder project. It is essential that all design and development decisions adhere to these guidelines to ensure a cohesive, modern, and professional look across the entire website.
+
+---
+
+## 1. Global Colors
+
+- **Color Palette:**  
+  Every color used must be one of the colors defined in `globals.css`. No additional colors are allowed.
+- **Usage:**  
+  Always reference colors using CSS variables (or classes) defined in `globals.css` to ensure consistency.
+
+  Modern Tech Aesthetic
+Overall Look:
+The design should convey a modern, sleek, and tech-inspired vibe. Think clean lines, minimalism, and a professional appearance.
+The view should look good on all screens desktop tablet and mobile.
+
+Typography & Spacing:
+Use modern, sans-serif fonts and maintain ample white space. All text should be easily readable, and the layout should be uncluttered.
+
+Visual Elements:
+Utilize subtle animations, crisp icons, and high-quality imagery that supports the modern tech theme.
+
+
+Buttons and Interactive Elements
+Border Radius:
+All buttons should have a border radius set to 1
+
+
+Animations and Transitions
+Primary Method:
+Use CSS for animations and transitions whenever possible (e.g., @keyframes and CSS transitions) to ensure smooth performance and simplicity.
+
+Entrance Animations:
+All CSS animations intended for element entrance effects (such as fade-ins, slide-ins, etc.) must be defined in globals.css and referenced from there. This centralizes the animation definitions and ensures consistency across the website.
+
+When to Use Framer Motion:
+Framer Motion should only be used for complex interactive animations that cannot be effectively achieved with CSS alone.
+
+General Principles:
+
+Subtlety: Animations must enhance the user experience without being distracting.
+
+Consistency: Use similar timing, easing, and duration across the website for uniformity.
+
+Performance: Avoid heavy animations that could negatively affect page performance.
+
+
+
