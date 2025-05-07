@@ -1,128 +1,233 @@
-'use client';
+"use client";
 
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Users, Lightbulb, Network } from "lucide-react";
+import { useState } from "react";
+import { ArrowRight } from "lucide-react";
+import ContactInfo from "./ContactInfo";
+import SocialMedia from "./SocialMedia";
 
 export default function CTASection() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error" | "network_error"
+  >("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (isSubmitting) return;
+
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    try {
+      // Use the API route instead of the direct service call
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, email, message }),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setSubmitStatus("success");
+        // Reset form
+        setName("");
+        setEmail("");
+        setMessage("");
+      } else {
+        setSubmitStatus("error");
+        setErrorMessage(
+          data.error ||
+            "Prišlo je do napake pri pošiljanju sporočila. Poskusite znova kasneje."
+        );
+      }
+    } catch (error) {
+      console.error("Error sending contact form:", error);
+
+      // Check if it's a network error
+      if (
+        error instanceof Error &&
+        (error.message.includes("network") ||
+          error.message.includes("ERR_NETWORK") ||
+          error.message.includes("Failed to fetch"))
+      ) {
+        setSubmitStatus("network_error");
+        setErrorMessage(
+          "Omrežna napaka: Trenutno ni mogoče poslati sporočila. " +
+            "Preverite vašo povezavo z internetom ali poskusite znova kasneje."
+        );
+      } else {
+        setSubmitStatus("error");
+        setErrorMessage(
+          "Prišlo je do napake pri pošiljanju sporočila. Poskusite znova kasneje."
+        );
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Simulation function for development environments
+  const simulateSuccessfulSubmission = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    setTimeout(() => {
+      setSubmitStatus("success");
+      setName("");
+      setEmail("");
+      setMessage("");
+      setIsSubmitting(false);
+    }, 1500);
+  };
+
   return (
-    <section className="w-full py-24 relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80">
-        {/* Animated gradient orbs */}
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl animate-blob" />
-        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-        <div className="absolute bottom-0 left-1/2 w-[500px] h-[500px] bg-accent/20 rounded-full blur-3xl animate-blob animation-delay-4000" />
-        
-        {/* Grid overlay */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]" />
-        
-        {/* Glowing dots */}
-        <div className="absolute inset-0">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-1 h-1 bg-white/30 rounded-full animate-pulse"
-              style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 2}s`,
-              }}
-            />
-          ))}
+    <section className="neo-brutalist-section" id="contact">
+      <div className="neo-brutalist-container">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="mb-6">KONTAKTIRAJ NAS</h2>
+          <p className="text-xl">
+            Če te zanima podjetništvo, inovacije, osebni razvoj ali zgolj
+            spoznavanje zanimivih ljudi, te vabimo, da se pridružiš
+            Podjetniškemu klubu FMF.
+          </p>
         </div>
-      </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-8"
-          >
-            <Sparkles className="w-4 h-4 text-white" />
-            <span className="text-white text-sm font-medium">
-              Pridruži se nam in rasti skupaj z nami
-            </span>
-          </motion.div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="animate-fade-in-up">
+            <h3 className="mb-6 text-xl font-bold">KONTAKTNI PODATKI</h3>
+            <ContactInfo />
 
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-            className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight"
-          >
-            Postani del naše podjetniške skupnosti
-          </motion.h2>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-            className="text-lg text-white/90 mb-12 max-w-2xl mx-auto"
-          >
-            Pridruži se nam in se poveži z ambicioznimi študenti, ki si želijo razviti svoje podjetniške veščine in ustvariti prihodnost.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          >
-            <div className="flex-1 sm:flex-initial">
-              <Button 
-                size="lg" 
-                className="bg-accent text-accent-foreground hover:bg-accent/90"
-                style={{ borderRadius: '1.5rem' }}
-              >
-                Pridruži se klubu
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+            <div className="mt-8">
+              <SocialMedia />
             </div>
-            <div className="flex items-center gap-2 text-white/80">
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-white/10 border-2 border-primary flex items-center justify-center">
-                  <Users className="w-4 h-4 text-white" />
+
+            <div className="neo-brutalist-card p-6 mt-8">
+              <h3 className="mb-4 font-bold">DELOVNI ČAS</h3>
+              <ul className="space-y-2">
+                <li className="flex justify-between">
+                  <span>Ponedeljek - Petek:</span>
+                  <span className="font-bold">09:00 - 16:00</span>
+                </li>
+                <li className="flex justify-between">
+                  <span>Sobota - Nedelja:</span>
+                  <span className="font-bold">ZAPRTO</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="animate-fade-in-up">
+            <div className="neo-brutalist-card p-8">
+              <h3 className="mb-6">POŠLJI NAM SPOROČILO</h3>
+
+              {submitStatus === "success" ? (
+                <div className="bg-muted p-6 border-2 border-primary">
+                  <h4 className="text-xl font-bold mb-2">Sporočilo poslano!</h4>
+                  <p>
+                    Hvala za tvoje sporočilo. Odgovorili ti bomo v najkrajšem
+                    možnem času.
+                  </p>
+                  <button
+                    onClick={() => setSubmitStatus("idle")}
+                    className="neo-brutalist-btn mt-4 w-full"
+                  >
+                    POŠLJI NOVO SPOROČILO
+                  </button>
                 </div>
-                <div className="w-8 h-8 rounded-full bg-white/10 border-2 border-primary flex items-center justify-center">
-                  <Lightbulb className="w-4 h-4 text-white" />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-white/10 border-2 border-primary flex items-center justify-center">
-                  <Network className="w-4 h-4 text-white" />
-                </div>
-              </div>
-              <span className="text-sm">Povezovanje • Inovacije • Rast</span>
-            </div>
-          </motion.div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {(submitStatus === "error" ||
+                    submitStatus === "network_error") && (
+                    <div className="bg-destructive/10 border-2 border-destructive p-4 mb-4">
+                      <p className="font-bold text-destructive mb-2">
+                        {errorMessage ||
+                          "Prišlo je do napake pri pošiljanju sporočila. Poskusite znova kasneje."}
+                      </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            viewport={{ once: true }}
-            className="mt-12 flex flex-wrap justify-center gap-6 text-white/70 text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent" />
-              <span>Mreženje s podjetniki</span>
+                      {submitStatus === "network_error" && (
+                        <div className="mt-4 p-3 bg-muted border-2 border-muted-foreground">
+                          <p className="text-sm">
+                            <strong>Razvijalci:</strong> Za lokalno testiranje
+                            lahko uporabite simulacijo:
+                          </p>
+                          <button
+                            onClick={simulateSuccessfulSubmission}
+                            className="mt-2 text-sm bg-primary text-primary-foreground px-3 py-1 border-2 border-black"
+                          >
+                            Simuliraj uspešno pošiljanje
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <div>
+                    <label htmlFor="name" className="block mb-2 font-bold">
+                      IME IN PRIIMEK
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      className="neo-brutalist-input w-full"
+                      placeholder="Tvoje ime in priimek"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="email" className="block mb-2 font-bold">
+                      EMAIL
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      className="neo-brutalist-input w-full"
+                      placeholder="tvoj.email@primer.com"
+                      required
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block mb-2 font-bold">
+                      SPOROČILO
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={5}
+                      value={message}
+                      onChange={(e) => setMessage(e.target.value)}
+                      className="neo-brutalist-input w-full"
+                      placeholder="Tvoje sporočilo..."
+                      required
+                    ></textarea>
+                  </div>
+
+                  <button
+                    type="submit"
+                    className="neo-brutalist-btn w-full flex items-center justify-center"
+                    disabled={isSubmitting}
+                  >
+                    {isSubmitting ? "POŠILJAM..." : "POŠLJI SPOROČILO"}
+                    {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
+                  </button>
+                </form>
+              )}
             </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent" />
-              <span>Razvoj idej</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 rounded-full bg-accent" />
-              <span>Osebna rast</span>
-            </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
-} 
+}

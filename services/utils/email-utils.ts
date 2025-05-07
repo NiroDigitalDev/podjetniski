@@ -1,8 +1,6 @@
 import {
   generateContactClientEmail,
-  type ContactClientEmailData,
+  generateContactAdminEmail,
 } from "../email-templates";
 
-export { generateContactClientEmail };
-
-export type { ContactClientEmailData };
+export { generateContactClientEmail, generateContactAdminEmail };
