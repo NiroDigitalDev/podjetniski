@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Link from "next/link";
 
 const faqCategories = [
   {
@@ -110,36 +111,46 @@ const faqCategories = [
 
 export default function FAQPage() {
   return (
-    <div className="min-h-screen bg-background pt-24 pb-16">
-      <div className="container mx-auto px-4">
+    <main className="neo-brutalist-section pt-24 pb-16">
+      <div className="neo-brutalist-container">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl font-bold text-primary mb-8 text-center">
-            Pogosta vprašanja
-          </h1>
-          <p className="text-xl text-muted-foreground mb-12 text-center">
-            Odgovorili smo na najpogostejša vprašanja o našem klubu. Če vam kaj
-            ni jasno, nas ne oklevajte kontaktirati.
-          </p>
+          <div className="text-center mb-12">
+            <h1 className="mb-4">
+              <span className="text-primary">POGOSTA</span> VPRAŠANJA
+            </h1>
+            <p className="text-xl">
+              Odgovorili smo na najpogostejša vprašanja o našem klubu. Če vam
+              kaj ni jasno, nas ne oklevajte kontaktirati.
+            </p>
+          </div>
 
-          <div className="space-y-8">
+          <div className="space-y-12">
             {faqCategories.map((category, categoryIndex) => (
-              <div key={categoryIndex} className="space-y-4">
-                <h2 className="text-2xl font-semibold text-primary mb-4">
+              <div
+                key={categoryIndex}
+                className="neo-brutalist-card p-8 animate-fade-in-up"
+                style={{
+                  animationDelay: `${categoryIndex * 150}ms`,
+                }}
+              >
+                <h2 className="text-2xl font-bold text-primary mb-6 uppercase">
                   {category.title}
                 </h2>
-                <Accordion type="single" collapsible className="w-full">
+                <Accordion
+                  type="single"
+                  collapsible
+                  className="w-full space-y-4"
+                >
                   {category.questions.map((item, questionIndex) => (
                     <AccordionItem
                       key={questionIndex}
                       value={`item-${categoryIndex}-${questionIndex}`}
-                      className="border-b"
+                      className="border-2 border-black"
                     >
-                      <AccordionTrigger className="hover:no-underline">
-                        <span className="text-lg font-medium">
-                          {item.question}
-                        </span>
+                      <AccordionTrigger className="hover:no-underline px-4 py-3 font-bold bg-muted">
+                        <span className="text-lg">{item.question}</span>
                       </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">
+                      <AccordionContent className="p-4 text-base">
                         {item.answer}
                       </AccordionContent>
                     </AccordionItem>
@@ -148,8 +159,25 @@ export default function FAQPage() {
               </div>
             ))}
           </div>
+
+          <div className="mt-16 text-center animate-fade-in-up">
+            <div className="neo-brutalist-card p-8 bg-primary text-primary-foreground">
+              <h2 className="text-2xl font-bold mb-4 uppercase">
+                Imate dodatna vprašanja?
+              </h2>
+              <p className="mb-6">
+                Če niste našli odgovora na svoje vprašanje, nam pišite.
+              </p>
+              <Link
+                href="/#contact"
+                className="neo-brutalist-btn-secondary bg-background text-foreground no-underline inline-block"
+              >
+                KONTAKTIRAJTE NAS
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }

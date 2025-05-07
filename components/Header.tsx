@@ -8,8 +8,8 @@ import { Menu, X } from "lucide-react";
 const navigation = [
   { name: "DOMOV", href: "/" },
   { name: "BLOG", href: "/blog" },
-  { name: "DOGODKI", href: "/events" },
-  { name: "O NAS", href: "/about" },
+  { name: "DOGODKI", href: "/dogodki" },
+  { name: "POGOSTA VPRAŠANJA", href: "/pogosto-zastavljena-vprasanja" },
 ];
 
 export default function Header() {
@@ -36,6 +36,26 @@ export default function Header() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [pathname]);
+
+  // Scroll to contact section
+  const scrollToContact = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    // If not on home page, navigate to home first
+    if (pathname !== "/") {
+      window.location.href = "/#contact";
+      return;
+    }
+
+    // Find the contact section and scroll to it
+    const contactSection = document.getElementById("contact");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+
+    // Close mobile menu
+    setMobileMenuOpen(false);
+  };
 
   return (
     <header className="fixed w-full z-50 top-0 p-4">
@@ -68,9 +88,9 @@ export default function Header() {
                 {item.name}
               </Link>
             ))}
-            <Link href="/contact" className="neo-brutalist-btn no-underline">
+            <button onClick={scrollToContact} className="neo-brutalist-btn">
               PRIDRUŽI SE
-            </Link>
+            </button>
           </nav>
 
           {/* Mobile menu button */}
@@ -107,12 +127,12 @@ export default function Header() {
                 </Link>
               ))}
               <div className="pt-4">
-                <Link
-                  href="/contact"
+                <button
+                  onClick={scrollToContact}
                   className="neo-brutalist-btn no-underline w-full text-center block"
                 >
                   PRIDRUŽI SE
-                </Link>
+                </button>
               </div>
             </nav>
           </div>

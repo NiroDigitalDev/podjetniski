@@ -25,79 +25,102 @@ export function BlogPage({
   const [error, setError] = useState(initialError);
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-4xl font-bold mb-8">Blog</h1>
-
-      {error && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
-          {error}
-        </div>
-      )}
-
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post) => (
-          <div
-            key={post.id}
-            className="border rounded-lg overflow-hidden shadow-sm"
-          >
-            {post.coverImage && (
-              <div className="relative h-48 w-full">
-                <Image
-                  src={post.coverImage}
-                  alt={post.title}
-                  fill
-                  style={{ objectFit: "cover" }}
-                />
-              </div>
-            )}
-            <div className="p-4">
-              <span className="text-sm text-gray-500 mb-1 block">
-                {post.category}
-              </span>
-              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-              <p className="text-gray-600 mb-4">{post.excerpt}</p>
-              <div className="flex justify-between items-center">
-                <div>
-                  <span className="text-sm text-gray-500">{post.date}</span>
-                  <span className="text-sm text-gray-500 ml-2">
-                    • {post.author}
-                  </span>
-                </div>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="text-blue-600 hover:text-blue-800"
-                >
-                  Preberi več
-                </Link>
-              </div>
-            </div>
+    <main className="neo-brutalist-section pt-24 pb-16">
+      <div className="neo-brutalist-container">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="mb-4">
+              <span className="text-primary">BLOG</span> PODJETNIŠKI KLUB
+            </h1>
+            <p className="text-xl max-w-3xl mx-auto">
+              Sledite našim člankom o podjetništvu, inovacijah in osebnem
+              razvoju. Pridobite koristne nasvete in informacije iz prve roke.
+            </p>
           </div>
-        ))}
-      </div>
 
-      {/* Pagination */}
-      {totalPages > 1 && (
-        <div className="flex justify-center mt-12">
-          <nav>
-            <ul className="flex space-x-2">
-              {Array.from({ length: totalPages }).map((_, index) => (
-                <li key={index}>
-                  <Link
-                    href={`/blog?page=${index + 1}`}
-                    className={`px-4 py-2 border rounded ${
-                      currentPage === index
-                        ? "bg-blue-600 text-white"
-                        : "bg-white text-blue-600 hover:bg-blue-50"
-                    }`}
-                  >
-                    {index + 1}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {error && (
+            <div className="neo-brutalist-card p-6 mb-12 bg-destructive/10 border-destructive">
+              <p className="font-bold text-destructive">{error}</p>
+            </div>
+          )}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {blogPosts.map((post, index) => (
+              <div
+                key={post.id}
+                className="neo-brutalist-card overflow-hidden animate-fade-in-up"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                {post.coverImage && (
+                  <div className="relative h-48 w-full border-b-2 border-black overflow-hidden">
+                    <Image
+                      src={post.coverImage}
+                      alt={post.title}
+                      fill
+                      style={{ objectFit: "cover" }}
+                    />
+                  </div>
+                )}
+                <div className="p-6">
+                  <div className="mb-2">
+                    <span className="inline-block bg-primary text-primary-foreground text-xs font-bold px-2 py-1">
+                      {post.category}
+                    </span>
+                  </div>
+                  <h2 className="text-xl font-bold mb-3">{post.title}</h2>
+                  <p className="mb-4 line-clamp-2">{post.excerpt}</p>
+                  <div className="flex justify-between items-center pt-4 border-t-2 border-border">
+                    <div>
+                      <span className="text-sm">{post.date}</span>
+                      {post.author && (
+                        <span className="text-sm ml-2">• {post.author}</span>
+                      )}
+                    </div>
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      className="text-primary font-bold no-underline hover:underline"
+                    >
+                      PREBERI VEČ
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Empty state */}
+          {blogPosts.length === 0 && !error && (
+            <div className="neo-brutalist-card p-8 text-center">
+              <h3 className="text-xl font-bold mb-2">Ni objavljenih člankov</h3>
+              <p>Trenutno ni objavljenih člankov. Preverite znova kasneje.</p>
+            </div>
+          )}
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="flex justify-center mt-12">
+              <nav>
+                <ul className="flex flex-wrap gap-2">
+                  {Array.from({ length: totalPages }).map((_, index) => (
+                    <li key={index}>
+                      <Link
+                        href={`/blog?page=${index + 1}`}
+                        className={`neo-brutalist-btn-sm ${
+                          currentPage === index
+                            ? "bg-primary text-primary-foreground"
+                            : "bg-background hover:bg-muted"
+                        }`}
+                      >
+                        {index + 1}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            </div>
+          )}
         </div>
-      )}
-    </div>
+      </div>
+    </main>
   );
 }

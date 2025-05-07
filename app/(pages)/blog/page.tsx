@@ -5,10 +5,11 @@ import { fetchAllBlogPosts } from "@/constants/blogData";
 export const revalidate = 1800; // 30 minutes in seconds
 
 export const metadata: Metadata = {
-  title: "Blog | Telefinder",
+  title: "Blog | Podjetniški Klub FMF",
   description:
-    "Preberite naše strokovne članke o telekomunikacijah, napotke in novice iz sveta mobilne telefonije.",
-  keywords: "telefinder, blog, telekomunikacije, mobilne naprave, operaterji",
+    "Preberite naše članke o podjetništvu, inovacijah, poslovnih idejah in zgodbah uspešnih podjetnikov.",
+  keywords:
+    "podjetništvo, podjetniški klub, blog, FMF, inovacije, mladi podjetniki, poslovna znanja",
 };
 
 export default async function Page({
@@ -19,7 +20,7 @@ export default async function Page({
   // Get page from query params or default to 0
   const pageParam = (await searchParams)?.page;
   const page = pageParam ? parseInt(pageParam) - 1 : 0;
-  const pageSize = 10;
+  const pageSize = 9; // 3x3 grid for Neo-Brutalist design
 
   try {
     const blogsData = await fetchAllBlogPosts(page, pageSize);
@@ -39,7 +40,7 @@ export default async function Page({
         initialBlogPosts={[]}
         initialTotalPages={1}
         initialCurrentPage={0}
-        initialError="Failed to load blog posts. Please try again later."
+        initialError="Na žalost trenutno ni mogoče naložiti člankov. Poskusite znova kasneje."
       />
     );
   }

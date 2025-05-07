@@ -1,63 +1,85 @@
-'use client';
+"use client";
 
-import { motion } from "framer-motion";
 import { Calendar } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function EventsPage() {
   return (
-    <div className="min-h-screen bg-background flex items-center justify-center">
-      <div className="container px-4 py-16">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto text-center"
-        >
-          <motion.div
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="mb-8"
-          >
-            <Calendar className="w-20 h-20 mx-auto text-accent" />
-          </motion.div>
-          
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-4xl font-bold mb-4"
-          >
-            Dogodki kmalu na voljo
-          </motion.h1>
-          
-          <motion.p 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-            className="text-lg text-muted-foreground mb-8"
-          >
-            Trenutno pripravljamo seznam prihajajočih in preteklihdogodkov. Kmalu boste lahko spremljali naše predavanja, delavnice in mrežna srečanja.
-          </motion.p>
+    <main className="neo-brutalist-section pt-24 pb-16">
+      <div className="neo-brutalist-container">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="mb-4">
+              <span className="text-primary">DOGODKI</span> PODJETNIŠKI KLUB
+            </h1>
+            <p className="text-xl max-w-3xl mx-auto">
+              Spremljajte naše dogodke, srečanja, delavnice in predavanja.
+              Povežite se z nami v živo!
+            </p>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.5 }}
-          >
-            <Button 
-              className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-full"
-              asChild
-            >
-              <Link href="/">
-                Nazaj na domačo stran
+          <div className="neo-brutalist-card p-12 text-center animate-fade-in-up">
+            <div className="inline-block bg-muted p-8 rounded-full mb-8">
+              <Calendar className="w-24 h-24 text-primary" />
+            </div>
+
+            <h2 className="text-3xl font-bold mb-6">DOGODKI KMALU NA VOLJO</h2>
+
+            <p className="text-xl mb-10 max-w-2xl mx-auto">
+              Trenutno pripravljamo seznam prihajajočih in preteklih dogodkov.
+              Kmalu boste lahko spremljali naša predavanja, delavnice in mrežna
+              srečanja.
+            </p>
+
+            <div className="mt-8 space-x-4">
+              <Link href="/" className="neo-brutalist-btn no-underline">
+                DOMOV
               </Link>
-            </Button>
-          </motion.div>
-        </motion.div>
+              <Link
+                href="/#contact"
+                className="neo-brutalist-btn-secondary no-underline"
+              >
+                OBVEŠČAJ ME
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              className="neo-brutalist-card p-8 text-center animate-fade-in-up"
+              style={{ animationDelay: "100ms" }}
+            >
+              <h3 className="mb-4">MREŽENJE</h3>
+              <p>
+                Druženje s strokovnjaki in podjetniki iz različnih industrij in
+                ustvarjanje dragocenih povezav.
+              </p>
+            </div>
+
+            <div
+              className="neo-brutalist-card p-8 text-center animate-fade-in-up"
+              style={{ animationDelay: "200ms" }}
+            >
+              <h3 className="mb-4">DELAVNICE</h3>
+              <p>
+                Praktične delavnice, kjer boste pridobili nova znanja in veščine
+                za podjetniško pot.
+              </p>
+            </div>
+
+            <div
+              className="neo-brutalist-card p-8 text-center animate-fade-in-up"
+              style={{ animationDelay: "300ms" }}
+            >
+              <h3 className="mb-4">PREDAVANJA</h3>
+              <p>
+                Inspirativna predavanja uspešnih podjetnikov in strokovnjakov z
+                bogatimi izkušnjami.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </main>
   );
-} 
+}

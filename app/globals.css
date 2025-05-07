@@ -181,6 +181,31 @@
   .neo-brutalist-section {
     @apply py-12 md:py-20;
   }
+
+  .neo-brutalist-btn-sm {
+    display: inline-block;
+    padding: 0.5rem 0.75rem;
+    font-weight: 700;
+    border: var(--neo-border-width) solid black;
+    box-shadow: var(--neo-shadow-offset) var(--neo-shadow-offset) 0 black;
+    transition: all 0.2s ease;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  .neo-brutalist-btn-sm:hover {
+    transform: translate(
+      var(--neo-shadow-offset-half),
+      var(--neo-shadow-offset-half)
+    );
+    box-shadow: 0 0 0 black;
+  }
+
+  .neo-brutalist-btn-sm:active {
+    transform: translate(var(--neo-shadow-offset), var(--neo-shadow-offset));
+    box-shadow: 0 0 0 black;
+  }
 }
 
 @layer utilities {
