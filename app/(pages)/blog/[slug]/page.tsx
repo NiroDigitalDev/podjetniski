@@ -1,7 +1,7 @@
 import BlogPost from "@/features/Blog/BlogPost";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
-import { fetchBlogPost, BlogPost as BlogPostType } from "@/services/APIService";
+import { fetchBlogPost, BlogPost as BlogPostType } from "@/constants/blogData";
 
 async function getPostData(slug: string): Promise<BlogPostType> {
   try {

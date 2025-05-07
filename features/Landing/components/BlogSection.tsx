@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { BlogCard } from "@/features/Blog/components/BlogCard";
-import { BlogPostSummary } from "@/services/APIService";
+import { BlogPostSummary } from "@/constants/blogData";
 
 interface BlogSectionProps {
   blogPosts: BlogPostSummary[];

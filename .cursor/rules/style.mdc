@@ -3,58 +3,96 @@ description:
 globs: 
 alwaysApply: true
 ---
+# Design System: Podjetniški Krožek Website
+
+## 🎯 Purpose
+This website is for **Slovenian high school and university students** participating in the **Podjetniški krožek** (Entrepreneurship Circle). Its goal is to **inspire, educate, and connect young entrepreneurial minds** with real-world professionals and opportunities.
+
+## ✨ Visual Style Direction
+
+This site will follow a **Neo-Brutalist design language**, characterized by **bold colors**, **full-opacity shadows**, and **geometric simplicity**. The design should feel **raw**, **authentic**, **energetic**, and **youthful**, appealing to **Gen Z students** while still conveying **credibility and professionalism**.
+
+### Primary Attributes
+- **Unapologetically bold**
+- **Minimal but expressive**
+- **Flat yet dimensional**
+- **Intellectually playful**
+
 ---
-description: 
-globs: 
-alwaysApply: true
+
+## 🎨 Color Palette
+
+| Purpose           | Color      | Hex       | Description                                   |
+|------------------|------------|-----------|-----------------------------------------------|
+| Primary Color     | Red        | `#FF0000` | Used for call-to-actions, highlights, links   |
+| Secondary Color   | Black      | `#000000` | Dominant text and shadows                     |
+| Background Color  | White      | `#FFFFFF` | Clean canvas to enhance contrast              |
+| Accent (optional) | Gray       | `#F4F4F4` | Light background zones, hover states if needed|
+
 ---
-# Podjetniški klub Style Guidelines
 
-This document outlines the style rules for the TeleFinder project. It is essential that all design and development decisions adhere to these guidelines to ensure a cohesive, modern, and professional look across the entire website.
+## 🖋️ Typography
+
+| Element    | Font                | Style                                  |
+|------------|---------------------|----------------------------------------|
+| Body       | Inter, sans-serif   | 16px, weight 400–700, 1.5 line-height  |
+| Headings   | Inter, sans-serif   | Bold (700–900), UPPERCASE, tight spacing |
+| Captions   | Inter, sans-serif   | 12–14px, slight letter spacing         |
+
+- **Headlines** should be impactful and dominant.
+- Use tight line spacing and generous padding to frame content.
+- Avoid serif or decorative fonts to preserve clarity and modernity.
 
 ---
 
-## 1. Global Colors
+## 🧱 UI Elements
 
-- **Color Palette:**  
-  Every color used must be one of the colors defined in `globals.css`. No additional colors are allowed.
-- **Usage:**  
-  Always reference colors using CSS variables (or classes) defined in `globals.css` to ensure consistency.
+### Buttons
+- Flat, bold background (`#FF0000`)
+- White text, uppercase, bold
+- Black solid box shadow (e.g., `4px 4px 0 #000`)
+- On hover: invert colors (black background, red text), increase shadow offset
 
-  Modern Tech Aesthetic
-Overall Look:
-The design should convey a modern, sleek, and tech-inspired vibe. Think clean lines, minimalism, and a professional appearance.
-The view should look good on all screens desktop tablet and mobile.
+### Cards
+- White background
+- Thick black borders (`2px`)
+- Full-opacity shadows (`6px 6px 0 #000`)
+- Padding: 20px, square edges (no border radius)
 
-Typography & Spacing:
-Use modern, sans-serif fonts and maintain ample white space. All text should be easily readable, and the layout should be uncluttered.
+### Links
+- Red text with no underline by default
+- On hover: black text, underline appears
+- Font weight: 700+
 
-Visual Elements:
-Utilize subtle animations, crisp icons, and high-quality imagery that supports the modern tech theme.
+### Forms
+- Inputs with black borders and no border radius
+- Shadows like buttons for consistency
+- On focus: red border
 
+---
 
-Buttons and Interactive Elements
-Border Radius:
-All buttons should have a border radius set to 1
+## 📱 Responsive Design
 
+- Mobile-first layout
+- Grid system with max-width `1200px`
+- Modular components should stack naturally
+- Ensure touch targets are large enough for younger mobile users
 
-Animations and Transitions
-Primary Method:
-Use CSS for animations and transitions whenever possible (e.g., @keyframes and CSS transitions) to ensure smooth performance and simplicity.
+---
 
-Entrance Animations:
-All CSS animations intended for element entrance effects (such as fade-ins, slide-ins, etc.) must be defined in globals.css and referenced from there. This centralizes the animation definitions and ensures consistency across the website.
+## 🧩 Personality & Tone
 
-When to Use Framer Motion:
-Framer Motion should only be used for complex interactive animations that cannot be effectively achieved with CSS alone.
+- **Voice**: Friendly, confident, and empowering
+- **Tone**: Direct but optimistic – avoid corporate jargon
+- **Emotion**: Should feel like a "startup garage" with real ambition
 
-General Principles:
+Use quirky icons and animations sparingly for microinteractions (e.g., on hover or on success). Do not oversaturate the interface—use playfulness to balance clarity, not undermine it.
 
-Subtlety: Animations must enhance the user experience without being distracting.
+---
 
-Consistency: Use similar timing, easing, and duration across the website for uniformity.
+## ✅ Summary
 
-Performance: Avoid heavy animations that could negatively affect page performance.
+This design system is a modern, energetic interpretation of entrepreneurial spirit for students. Bold colors, clean geometry, and clear messaging will help build credibility while still speaking the visual language of young creatives.
 
-
+**Design like it’s your first pitch deck. Be honest, fearless, and a little loud.**
 

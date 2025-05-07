@@ -15,6 +15,28 @@
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -56,51 +78,121 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: #f9f9f9;
-  --foreground: #2e2e2e;
-  --card: #f9f9f9;
-  --card-foreground: #2e2e2e;
-  --popover: #f9f9f9;
-  --popover-foreground: #2e2e2e;
-  --primary: #050a10;
-  --primary-foreground: #f9f9f9;
-  --secondary: #ebebeb;
-  --secondary-foreground: #2e2e2e;
-  --muted: #e4e4e4;
-  --muted-foreground: #2e2e2e;
-  --accent: #b01217;
-  --accent-foreground: #f9f9f9;
-  --destructive: #000;
-  --border: #050a10;
-  --input: #e4e4e4;
-  --ring: #b01217;
-  --chart-1: #b01217;
-  --chart-2: #050a10;
-  --chart-3: #2e2e2e;
-  --chart-4: #e4e4e4;
-  --chart-5: #f9f9f9;
-  --sidebar: #f9f9f9;
-  --sidebar-foreground: #2e2e2e;
-  --sidebar-primary: #050a10;
-  --sidebar-primary-foreground: #f9f9f9;
-  --sidebar-accent: #b01217;
-  --sidebar-accent-foreground: #f9f9f9;
-  --sidebar-border: #050a10;
-  --sidebar-ring: #b01217;
+  --radius: 0px;
+  --background: #ffffff;
+  --foreground: #000000;
+  --card: #ffffff;
+  --card-foreground: #000000;
+  --popover: #ffffff;
+  --popover-foreground: #000000;
+  --primary: #ff0000;
+  --primary-foreground: #ffffff;
+  --secondary: #000000;
+  --secondary-foreground: #ffffff;
+  --muted: #f4f4f4;
+  --muted-foreground: #757575;
+  --accent: #ff0000;
+  --accent-foreground: #ffffff;
+  --destructive: #ff0000;
+  --destructive-foreground: #ffffff;
+  --border: #000000;
+  --input: #000000;
+  --ring: #ff0000;
+
+  /* Neo-Brutalist specific variables */
+  --neo-shadow: 6px 6px 0 #000000;
+  --neo-shadow-sm: 4px 4px 0 #000000;
+  --neo-shadow-hover: 8px 8px 0 #000000;
+  --neo-border-width: 2px;
 }
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border;
   }
+
+  html,
   body {
-    @apply bg-background text-foreground;
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold uppercase tracking-tight;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h3 {
+    @apply text-2xl;
+  }
+
+  a {
+    @apply text-primary font-bold hover:underline;
+  }
+}
+
+@layer components {
+  .neo-brutalist-card {
+    @apply bg-background border-black border-[var(--neo-border-width)] shadow-[var(--neo-shadow)] 
+           transition-all duration-200 hover:shadow-[var(--neo-shadow-hover)] 
+           hover:translate-x-[-2px] hover:translate-y-[-2px];
+  }
+
+  .neo-brutalist-btn {
+    @apply bg-primary text-primary-foreground border-black border-[var(--neo-border-width)]
+           font-bold uppercase px-6 py-3 shadow-[var(--neo-shadow-sm)]
+           transition-all duration-200 
+           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none
+           active:translate-x-[4px] active:translate-y-[4px] active:shadow-none;
+  }
+
+  .neo-brutalist-btn-secondary {
+    @apply bg-secondary text-secondary-foreground border-black border-[var(--neo-border-width)]
+           font-bold uppercase px-6 py-3 shadow-[var(--neo-shadow-sm)]
+           transition-all duration-200 
+           hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-none
+           active:translate-x-[4px] active:translate-y-[4px] active:shadow-none;
+  }
+
+  .neo-brutalist-input {
+    @apply bg-background border-black border-[var(--neo-border-width)] px-4 py-3
+           focus:outline-none focus:border-primary focus:shadow-[var(--neo-shadow-sm)];
+  }
+
+  .neo-brutalist-container {
+    @apply max-w-[1200px] mx-auto px-4 md:px-6;
+  }
+
+  .neo-brutalist-section {
+    @apply py-12 md:py-20;
   }
 }
 
 @layer utilities {
   .animate-fade-in-up {
     animation: fadeInUp 0.5s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-blink {
+    animation: blink 2s ease-in-out infinite;
   }
 }

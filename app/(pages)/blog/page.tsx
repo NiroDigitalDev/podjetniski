@@ -1,6 +1,6 @@
 import { BlogPage } from "@/features/Blog/BlogPage";
 import { Metadata } from "next";
-import { fetchAllBlogPosts } from "@/services/APIService";
+import { fetchAllBlogPosts } from "@/constants/blogData";
 
 export const revalidate = 1800; // 30 minutes in seconds
 

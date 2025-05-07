@@ -10,7 +10,7 @@ alwaysApply: true
 ---
 # Project Overview
 
-- **Framework & Technologies**: Next.js 15, Supabase, Shadcn UI.
+- **Framework & Technologies**: Next.js 15, Shadcn UI.
 - **Rendering Strategy**: Use server components as frequently as possible. Employ SSG/SSR where appropriate for performance and SEO benefits.
 
 # Directory & File Structure
