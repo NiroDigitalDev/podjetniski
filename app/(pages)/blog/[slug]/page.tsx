@@ -12,7 +12,7 @@ async function getPostData(slug: string): Promise<BlogPostType> {
   }
 }
 
-// Using inline type for generateMetadata props
+// Use the correct type for params in Next.js 15
 export async function generateMetadata({
   params,
 }: {
@@ -23,20 +23,28 @@ export async function generateMetadata({
     const post = await getPostData(slug);
 
     return {
-      title: post.title + " | Telefinder",
+      title: post.title + " | Podjetniški Klub FMF",
       description: post.excerpt || post.seoDescription || undefined,
-      keywords: post.seoKeywords || undefined,
+      keywords: post.seoKeywords || "podjetniški klub, FMF, podjetništvo, študentska iniciativa",
+      openGraph: {
+        title: post.title,
+        description: post.excerpt || post.seoDescription || undefined,
+        type: "article",
+        publishedTime: post.date,
+        authors: [post.author],
+        images: [post.coverImage],
+      },
     };
   } catch (error) {
     console.error("Error generating metadata:", error);
     return {
-      title: "Blog Post | Telefinder",
+      title: "Blog Post | Podjetniški Klub FMF",
       description: "Blog post details",
     };
   }
 }
 
-// Using inline type for Page props
+// Use the correct type for params in Next.js 15
 export default async function Page({
   params,
 }: {

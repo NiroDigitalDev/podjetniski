@@ -18,7 +18,7 @@ export default function ContactInfo() {
           </svg>
           <div>
             <h3 className="text-lg mb-1 font-bold">TELEFON</h3>
-            <p>+386 1 234 5678</p>
+            <a href="tel:+38670630880" className="hover:text-primary">+386 70 630 880</a>
           </div>
         </div>
       </div>
@@ -41,7 +41,7 @@ export default function ContactInfo() {
           </svg>
           <div>
             <h3 className="text-lg mb-1 font-bold">EMAIL</h3>
-            <p>podjetniski.klub@fmf.uni-lj.si</p>
+            <a href="mailto:nd7855@student.uni-lj.si" className="hover:text-primary">nd7855@student.uni-lj.si</a>
           </div>
         </div>
       </div>

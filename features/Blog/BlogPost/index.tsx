@@ -8,10 +8,10 @@ interface BlogPostProps {
 
 export default function BlogPost({ post }: BlogPostProps) {
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 pt-24 pb-12">
       <Link
         href="/blog"
-        className="inline-block mb-6 text-blue-600 hover:text-blue-800"
+        className="inline-block mb-6 neo-brutalist-btn-sm bg-primary text-primary-foreground no-underline"
       >
         ← Nazaj na blog
       </Link>
@@ -28,14 +28,18 @@ export default function BlogPost({ post }: BlogPostProps) {
           </div>
 
           {post.coverImage && (
-            <div className="relative h-96 w-full mb-8">
-              <Image
-                src={post.coverImage}
-                alt={post.title}
-                fill
-                style={{ objectFit: "cover" }}
-                className="rounded-lg"
-              />
+            <div className="mb-8 w-full">
+              <div className="relative w-full max-w-full">
+                <Image
+                  src={post.coverImage}
+                  alt={post.title}
+                  width={1200}
+                  height={800}
+                  priority
+                  className="rounded-lg w-full h-auto"
+                  style={{ objectFit: "contain" }}
+                />
+              </div>
             </div>
           )}
         </header>

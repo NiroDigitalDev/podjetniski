@@ -330,18 +330,7 @@ export default function PrivacyPage() {
               vseh pomembnih spremembah in po potrebi bomo zahtevali vašo
               privolitev.
             </p>
-            <p>
-              Za podrobnejše informacije o piškotkih, ki jih uporabljamo,
-              njihovih namenih in kako lahko upravljate svoje preference,
-              obiščite našo podrobno{" "}
-              <Link
-                href="/cookie-policy"
-                className="text-primary hover:underline"
-              >
-                Politiko piškotkov
-              </Link>
-              .
-            </p>
+          
             <p>
               Če imate kakršna koli vprašanja ali pomisleke glede naše uporabe
               piškotkov in tehnologij sledenja, nas ne oklevajte kontaktirati na

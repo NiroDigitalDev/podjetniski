@@ -5,7 +5,7 @@ export function generateContactClientEmail(name: string): string {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sporočilo prejeto</title>
+    <title>Potrditev prijave</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
         
@@ -13,8 +13,8 @@ export function generateContactClientEmail(name: string): string {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F4F4F4;
-            color: #000000;
+            background-color: #000000;
+            color: #FFFFFF;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -28,7 +28,7 @@ export function generateContactClientEmail(name: string): string {
             background-color: #FF0000;
             padding: 30px;
             text-align: center;
-            border: 2px solid #000000;
+            border: 2px solid #FFFFFF;
             border-bottom: none;
         }
         
@@ -41,10 +41,10 @@ export function generateContactClientEmail(name: string): string {
         }
         
         .content {
-            background-color: #FFFFFF;
+            background-color: #000000;
             padding: 40px 30px;
-            border-left: 2px solid #000000;
-            border-right: 2px solid #000000;
+            border-left: 2px solid #FFFFFF;
+            border-right: 2px solid #FFFFFF;
             position: relative;
         }
         
@@ -55,15 +55,15 @@ export function generateContactClientEmail(name: string): string {
             left: 0;
             right: 0;
             height: 10px;
-            background-color: #000000;
+            background-color: #FFFFFF;
         }
         
         .message-box {
-            background-color: #FFFFFF;
-            border: 2px solid #000000;
+            background-color: #000000;
+            border: 2px solid #FFFFFF;
             padding: 30px;
             margin-bottom: 30px;
-            box-shadow: 6px 6px 0 #000000;
+            box-shadow: 6px 6px 0 #FFFFFF;
         }
         
         .title {
@@ -72,14 +72,14 @@ export function generateContactClientEmail(name: string): string {
             text-transform: uppercase;
             margin: 0 0 20px 0;
             letter-spacing: 0.5px;
-            color: #000000;
+            color: #FFFFFF;
         }
         
         .message {
             font-size: 16px;
             line-height: 1.6;
             margin-bottom: 25px;
-            color: #000000;
+            color: #FFFFFF;
         }
         
         .button {
@@ -91,15 +91,15 @@ export function generateContactClientEmail(name: string): string {
             font-weight: 700;
             text-transform: uppercase;
             font-size: 16px;
-            border: 2px solid #000000;
-            box-shadow: 4px 4px 0 #000000;
+            border: 2px solid #FFFFFF;
+            box-shadow: 4px 4px 0 #FFFFFF;
             letter-spacing: 0.5px;
             transition: all 0.2s ease;
         }
         
         .button:hover {
-            background-color: #000000;
-            color: #FFFFFF;
+            background-color: #FFFFFF;
+            color: #000000;
             box-shadow: none;
             transform: translate(4px, 4px);
         }
@@ -109,7 +109,7 @@ export function generateContactClientEmail(name: string): string {
             padding: 30px;
             text-align: center;
             color: #FFFFFF;
-            border: 2px solid #000000;
+            border: 2px solid #FFFFFF;
             border-top: none;
         }
         
@@ -182,35 +182,34 @@ export function generateContactClientEmail(name: string): string {
         
         <div class="content">
             <div class="message-box">
-                <div class="title">Sporočilo prejeto!</div>
+                <div class="title">Prijava uspešno prejeta!</div>
                 
                 <div class="message">
                     <p>Zdravo ${name},</p>
-                    <p>Prejeli smo vaše sporočilo in se vam zahvaljujemo za zanimanje za Podjetniški klub FMF.</p>
-                    <p>Odgovorili vam bomo v najkrajšem možnem času. Za kakršnakoli dodatna vprašanja smo vam na voljo.</p>
+                    <p>Hvala za prijavo na Podjetniški klub FMF.</p>
+                    <p>Dodali vas bomo na našo mailing listo in vas obveščali o prihajajočih dogodkih, zanimivih predavanjih, podjetniških priložnostih in ostalih aktivnostih našega kluba.</p>
+                    <p>Za kakršnakoli vprašanja smo vam na voljo.</p>
                 </div>
             </div>
             
             <center>
-                <a href="https://podjetniski-klub.fmf.si" class="button">Nazaj na spletno stran</a>
+                <a href="https://podjetniski.vercel.app" class="button">Nazaj na spletno stran</a>
             </center>
         </div>
         
         <div class="footer">
             <div class="footer-links">
-                <a href="https://podjetniski-klub.fmf.si">DOMOV</a>
-                <a href="https://podjetniski-klub.fmf.si/blog">BLOG</a>
-                <a href="https://podjetniski-klub.fmf.si/events">DOGODKI</a>
+                <a href="https://podjetniski.vercel.app">DOMOV</a>
+                <a href="https://podjetniski.vercel.app/blog">BLOG</a>
+                <a href="https://podjetniski.vercel.app/dogodki">DOGODKI</a>
             </div>
             
             <div class="social-row">
-                <a href="#" class="social-link">f</a>
-                <a href="#" class="social-link">in</a>
-                <a href="#" class="social-link">ig</a>
+                <a href="https://instagram.com/podjetniski.klub.fmf" class="social-link">ig</a>
             </div>
             
             <div class="contact">
-                <a href="mailto:podjetniski.klub@fmf.uni-lj.si">podjetniski.klub@fmf.uni-lj.si</a>
+                <a href="mailto:nd7855@student.uni-lj.si">nd7855@student.uni-lj.si</a>
             </div>
             
             <div class="copyright">

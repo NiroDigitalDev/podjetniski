@@ -1,7 +1,18 @@
-"use client";
+import { Calendar, Clock, MapPin } from "lucide-react";
+import { Metadata } from "next";
 
-import { Calendar } from "lucide-react";
-import Link from "next/link";
+export const metadata: Metadata = {
+  title: "Dogodki | Podjetniški Klub FMF",
+  description:
+    "Spremljajte srečanja, delavnice in predavanja Podjetniškega kluba FMF. Pridružite se nam na dogodkih z uspešnimi podjetniki in strokovnjaki.",
+  keywords:
+    "podjetniški dogodki, FMF, mreženje, delavnice, predavanja, študentski dogodki, podjetništvo, startup srečanja",
+  openGraph: {
+    title: "Dogodki Podjetniškega kluba FMF",
+    description: "Srečanja s podjetniki, delavnice in predavanja za študente, ki jih zanima podjetništvo",
+    images: ['/images/og-image.png'],
+  },
+};
 
 export default function EventsPage() {
   return (
@@ -18,29 +29,73 @@ export default function EventsPage() {
             </p>
           </div>
 
-          <div className="neo-brutalist-card p-12 text-center animate-fade-in-up">
-            <div className="inline-block bg-muted p-8 rounded-full mb-8">
-              <Calendar className="w-24 h-24 text-primary" />
+          <div className="space-y-8">
+            <div className="neo-brutalist-card p-8 animate-fade-in-up">
+              <h2 className="text-2xl font-bold mb-4">Q&A SREČANJE Z IVO BOSCAROLOM</h2>
+              
+              <div className="flex flex-col md:flex-row gap-6 mb-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="w-5 h-5 text-primary" />
+                    <span className="font-bold">8. maj 2025 (četrtek)</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Clock className="w-5 h-5 text-primary" />
+                    <span>17:00–19:00</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span>FMF, matematična stavba, učilnica 2.02</span>
+                  </div>
+                  <div className="font-bold text-primary">Udeležba brezplačna</div>
+                </div>
+                
+                <div className="flex-1">
+                  <p className="mb-4">
+                    Ekskluzivno Q&A srečanje z legendarnim podjetnikom Ivo Boscarolom, vizionarjem, 
+                    ki je s svojim podjetjem Pipistrel premikal meje mogočega in slovensko 
+                    inovativnost ponesel v svet.
+                  </p>
+                  <p>
+                    Boscarol je pionir v razvoju električnih letal, prejemnik številnih mednarodnih 
+                    nagrad in človek, ki s svojo energijo, drznostjo in predanostjo navdihuje generacije podjetnikov.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <h2 className="text-3xl font-bold mb-6">DOGODKI KMALU NA VOLJO</h2>
-
-            <p className="text-xl mb-10 max-w-2xl mx-auto">
-              Trenutno pripravljamo seznam prihajajočih in preteklih dogodkov.
-              Kmalu boste lahko spremljali naša predavanja, delavnice in mrežna
-              srečanja.
-            </p>
-
-            <div className="mt-8 space-x-4">
-              <Link href="/" className="neo-brutalist-btn no-underline">
-                DOMOV
-              </Link>
-              <Link
-                href="/#contact"
-                className="neo-brutalist-btn-secondary no-underline"
-              >
-                OBVEŠČAJ ME
-              </Link>
+            <div className="neo-brutalist-card p-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+              <h2 className="text-2xl font-bold mb-4">ANDRIJA ŠULIĆ: OBLIKOVANJE DIGITALNIH PRODUKTOV</h2>
+              
+              <div className="flex flex-col md:flex-row gap-6 mb-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="w-5 h-5 text-primary" />
+                    <span className="font-bold">12. maj 2025 (ponedeljek)</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Clock className="w-5 h-5 text-primary" />
+                    <span>18:00–20:00</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span>FMF, matematična stavba, učilnica 2.02</span>
+                  </div>
+                  <div className="font-bold text-primary">Udeležba brezplačna</div>
+                </div>
+                
+                <div className="flex-1">
+                  <p className="mb-4">
+                    Gostimo izjemnega podjetnika in produktnega oblikovalca Andrijo Šulića, 
+                    soustanovitelja podjetja Trampoline Studio.
+                  </p>
+                  <p>
+                    Andrija ima več kot 15 let izkušenj z vodenjem digitalnih projektov za naročnike, 
+                    kot so Telekom Slovenije, NLB, Volkswagen in številni ameriški startupi. 
+                    V podjetju Trampoline Studio vodi oblikovanje digitalnih produktov.
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 

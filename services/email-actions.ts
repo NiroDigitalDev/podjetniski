@@ -40,12 +40,12 @@ export async function sendContactEmails(
         "Development mode detected - logging email content instead of sending:"
       );
       console.info(
-        `Would send to ${email} - Subject: "Sporočilo prejeto - Podjetniški klub FMF"`
+        `Would send to ${email} - Subject: "Potrditev prijave - Podjetniški klub FMF"`
       );
       console.info(
         `Would send to ${
           MAILGUN_ADMIN_EMAIL || "admin@example.com"
-        } - Subject: "Novo sporočilo od ${name}"`
+        } - Subject: "Nova prijava od ${name}"`
       );
 
       // Simulate a delay to mimic API call
@@ -68,7 +68,7 @@ export async function sendContactEmails(
     await mg.messages.create(MAILGUN_ADMIN_DOMAIN, {
       from: MAILGUN_ADMIN_FROM,
       to: [email],
-      subject: "Sporočilo prejeto - Podjetniški klub FMF",
+      subject: "Potrditev prijave - Podjetniški klub FMF",
       html: clientEmailHtml,
     });
 
@@ -76,7 +76,7 @@ export async function sendContactEmails(
     await mg.messages.create(MAILGUN_ADMIN_DOMAIN, {
       from: MAILGUN_ADMIN_FROM,
       to: [MAILGUN_ADMIN_EMAIL],
-      subject: `Novo sporočilo od ${name}`,
+      subject: `Nova prijava od ${name}`,
       html: adminEmailHtml,
     });
 

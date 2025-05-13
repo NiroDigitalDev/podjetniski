@@ -7,7 +7,7 @@ export async function POST(request: Request) {
     const formData = await request.json();
     const { name, email, message } = formData;
 
-    if (!name || !email || !message) {
+    if (!name || !email) {
       return NextResponse.json(
         { success: false, error: "Required fields missing" },
         { status: 400 }
@@ -15,7 +15,7 @@ export async function POST(request: Request) {
     }
 
     // Send emails
-    const success = await sendContactEmails(name, email, message);
+    const success = await sendContactEmails(name, email, message || "");
 
     if (success) {
       return NextResponse.json({ success: true });

@@ -92,7 +92,7 @@ export default function CTASection() {
     <section className="neo-brutalist-section" id="contact">
       <div className="neo-brutalist-container">
         <div className="max-w-4xl mx-auto text-center mb-12">
-          <h2 className="mb-6">KONTAKTIRAJ NAS</h2>
+          <h2 className="mb-6">PRIDRUŽI SE NAM</h2>
           <p className="text-xl">
             Če te zanima podjetništvo, inovacije, osebni razvoj ali zgolj
             spoznavanje zanimivih ljudi, te vabimo, da se pridružiš
@@ -109,37 +109,24 @@ export default function CTASection() {
               <SocialMedia />
             </div>
 
-            <div className="neo-brutalist-card p-6 mt-8">
-              <h3 className="mb-4 font-bold">DELOVNI ČAS</h3>
-              <ul className="space-y-2">
-                <li className="flex justify-between">
-                  <span>Ponedeljek - Petek:</span>
-                  <span className="font-bold">09:00 - 16:00</span>
-                </li>
-                <li className="flex justify-between">
-                  <span>Sobota - Nedelja:</span>
-                  <span className="font-bold">ZAPRTO</span>
-                </li>
-              </ul>
-            </div>
+           
           </div>
 
           <div className="animate-fade-in-up">
             <div className="neo-brutalist-card p-8">
-              <h3 className="mb-6">POŠLJI NAM SPOROČILO</h3>
+              <h3 className="mb-6">PRIDRUŽI SE NAM</h3>
 
               {submitStatus === "success" ? (
                 <div className="bg-muted p-6 border-2 border-primary">
-                  <h4 className="text-xl font-bold mb-2">Sporočilo poslano!</h4>
+                  <h4 className="text-xl font-bold mb-2">Prijava uspešno prejeta!</h4>
                   <p>
-                    Hvala za tvoje sporočilo. Odgovorili ti bomo v najkrajšem
-                    možnem času.
+                    Hvala za prijavo na Podjetniški klub FMF. Dodali vas bomo na našo mailing listo in vas obveščali o prihajajočih dogodkih, zanimivih predavanjih in ostalih aktivnostih našega kluba.
                   </p>
                   <button
                     onClick={() => setSubmitStatus("idle")}
                     className="neo-brutalist-btn mt-4 w-full"
                   >
-                    POŠLJI NOVO SPOROČILO
+                    ZAPRI
                   </button>
                 </div>
               ) : (
@@ -149,7 +136,7 @@ export default function CTASection() {
                     <div className="bg-destructive/10 border-2 border-destructive p-4 mb-4">
                       <p className="font-bold text-destructive mb-2">
                         {errorMessage ||
-                          "Prišlo je do napake pri pošiljanju sporočila. Poskusite znova kasneje."}
+                          "Prišlo je do napake pri oddaji prijave. Poskusite znova kasneje."}
                       </p>
 
                       {submitStatus === "network_error" && (
@@ -201,7 +188,7 @@ export default function CTASection() {
 
                   <div>
                     <label htmlFor="message" className="block mb-2 font-bold">
-                      SPOROČILO
+                      OPOMBA (NEOBVEZNO)
                     </label>
                     <textarea
                       id="message"
@@ -209,8 +196,7 @@ export default function CTASection() {
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
                       className="neo-brutalist-input w-full"
-                      placeholder="Tvoje sporočilo..."
-                      required
+                      placeholder="Dodatne informacije ali vprašanja..."
                     ></textarea>
                   </div>
 
@@ -219,7 +205,7 @@ export default function CTASection() {
                     className="neo-brutalist-btn w-full flex items-center justify-center"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "POŠILJAM..." : "POŠLJI SPOROČILO"}
+                    {isSubmitting ? "PRIJAVA V TEKU..." : "PRIDRUŽI SE"}
                     {!isSubmitting && <ArrowRight className="ml-2 h-4 w-4" />}
                   </button>
                 </form>

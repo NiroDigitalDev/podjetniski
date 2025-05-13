@@ -3,9 +3,15 @@ import { Metadata } from "next";
 import { BlogPostSummary, fetchAllBlogPosts } from "@/constants/blogData";
 
 export const metadata: Metadata = {
-  title: "TeleFinder | Najdi svojega telefonskega operaterja",
+  title: "Podjetniški klub FMF | Študentska podjetniška iniciativa",
   description:
-    "TeleFinder vam pomaga najti najboljšega mobilnega operaterja glede na vašo lokacijo in potrebe. Preverite pokritost in kakovost signala.",
+    "Podjetniški klub FMF je študentska iniciativa, namenjena vsem študentom Fakultete za matematiko in fiziko, ki jih zanima podjetništvo, inovacije in osebni razvoj.",
+  keywords: "podjetništvo, FMF, študentski klub, inovacije, mreženje, mentorstvo, startup, podjetniške ideje, fakulteta za matematiko in fiziko",
+  openGraph: {
+    title: "Podjetniški klub FMF",
+    description: "Študentska iniciativa za podjetništvo in inovacije na Fakulteti za matematiko in fiziko",
+    images: ['/images/og-image.png'],
+  },
 };
 
 export const revalidate = 1800; // 30 minutes in seconds

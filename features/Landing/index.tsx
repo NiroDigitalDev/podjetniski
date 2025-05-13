@@ -25,12 +25,18 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
                 matematiko in fiziko, ki jih zanima podjetništvo, inovacije in
                 osebni razvoj.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/about" className="neo-brutalist-btn no-underline">
-                  O NAS
-                </Link>
+              <div className="flex flex-wrap gap-4" >
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="neo-brutalist-btn no-underline cursor-pointer hover:cursor-pointer"
+                >
+                  PRIDRUŽI SE NAM
+                </button>
                 <Link
-                  href="/events"
+                  href="/dogodki"
                   className="neo-brutalist-btn-secondary no-underline"
                 >
                   DOGODKI
@@ -40,7 +46,7 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
             <div className="relative h-[400px] animate-float">
               <div className="neo-brutalist-card absolute top-0 right-0 w-full h-full overflow-hidden">
                 <Image
-                  src="/images/hero.webp"
+                  src="/images/002.jpg"
                   alt="Podjetniški Klub FMF"
                   fill
                   style={{ objectFit: "cover" }}
@@ -102,18 +108,18 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/4">
                 <div className="bg-primary text-primary-foreground p-4 text-center border-black border-[var(--neo-border-width)]">
-                  <span className="text-3xl font-bold">15</span>
-                  <p className="uppercase font-bold">Maj</p>
+                  <span className="text-3xl font-bold">8</span>
+                  <p className="uppercase font-bold">Maj 2025</p>
                 </div>
               </div>
               <div className="md:w-3/4">
                 <h3 className="mb-2">
-                  PODJETNIŠKI VEČER: OD IDEJE DO PRODUKTA
+                  Q&A SREČANJE Z IVO BOSCAROLOM
                 </h3>
                 <p className="mb-4">
-                  Pridružite se nam na podjetniškem večeru, kjer bomo gostili
-                  uspešnega podjetnika, ki bo delil svojo pot od začetne ideje
-                  do uspešnega produkta.
+                  Ekskluzivno Q&A srečanje z legendarnim podjetnikom Ivo Boscarolom, vizionarjem, 
+                  ki je s svojim podjetjem Pipistrel premikal meje mogočega in slovensko 
+                  inovativnost ponesel v svet.
                 </p>
                 <div className="flex items-center gap-2">
                   <svg
@@ -131,7 +137,7 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
                   <span>
-                    Fakulteta za matematiko in fiziko, predavalnica F1
+                    FMF, matematična stavba, učilnica 2.02
                   </span>
                 </div>
               </div>
@@ -142,17 +148,18 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/4">
                 <div className="bg-primary text-primary-foreground p-4 text-center border-black border-[var(--neo-border-width)]">
-                  <span className="text-3xl font-bold">22</span>
-                  <p className="uppercase font-bold">Maj</p>
+                  <span className="text-3xl font-bold">12</span>
+                  <p className="uppercase font-bold">Maj 2025</p>
                 </div>
               </div>
               <div className="md:w-3/4">
                 <h3 className="mb-2">
-                  DELAVNICA: KAKO PREDSTAVITI SVOJO IDEJO
+                  ANDRIJA ŠULIĆ: OBLIKOVANJE DIGITALNIH PRODUKTOV
                 </h3>
                 <p className="mb-4">
-                  Praktična delavnica, kjer se boste naučili učinkovito
-                  predstaviti svoje podjetniške ideje in projekte.
+                  Gostimo izjemnega podjetnika in produktnega oblikovalca Andrijo Šulića, 
+                  soustanovitelja podjetja Trampoline Studio, ki ima več kot 15 let izkušenj z vodenjem 
+                  digitalnih projektov za naročnike, kot so Telekom Slovenije, NLB in Volkswagen.
                 </p>
                 <div className="flex items-center gap-2">
                   <svg
@@ -170,7 +177,7 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
                   <span>
-                    Fakulteta za matematiko in fiziko, računalniška učilnica
+                    FMF, matematična stavba, učilnica 2.02
                   </span>
                 </div>
               </div>
@@ -178,7 +185,7 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
           </div>
 
           <div className="text-center mt-10">
-            <Link href="/events" className="neo-brutalist-btn no-underline">
+            <Link href="/dogodki" className="neo-brutalist-btn no-underline">
               VSI DOGODKI
             </Link>
           </div>
@@ -218,7 +225,11 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
                       {post.excerpt}
                     </p>
                     <div className="flex justify-between items-center pt-4 border-t border-border">
-                      <span className="text-sm">{post.date}</span>
+                      <div>
+                        <span className="text-sm">{post.date}</span>
+                        <span className="text-sm mx-2">•</span>
+                        <span className="text-sm">{post.author}</span>
+                      </div>
                       <Link
                         href={`/blog/${post.slug}`}
                         className="text-primary font-bold no-underline hover:underline"

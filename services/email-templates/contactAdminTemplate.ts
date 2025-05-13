@@ -9,7 +9,7 @@ export function generateContactAdminEmail(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Novo sporočilo - Podjetniški Klub FMF</title>
+    <title>Nova prijava - Podjetniški Klub FMF</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
         
@@ -17,8 +17,8 @@ export function generateContactAdminEmail(
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F4F4F4;
-            color: #000000;
+            background-color: #000000;
+            color: #FFFFFF;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -56,7 +56,7 @@ export function generateContactAdminEmail(
         }
         
         .content {
-            background-color: #FFFFFF;
+            background-color: #000000;
             padding: 40px 30px;
             border-left: 2px solid #FF0000;
             border-right: 2px solid #FF0000;
@@ -68,7 +68,7 @@ export function generateContactAdminEmail(
             text-transform: uppercase;
             margin: 0 0 30px 0;
             letter-spacing: 0.5px;
-            color: #000000;
+            color: #FFFFFF;
             border-bottom: 4px solid #FF0000;
             padding-bottom: 10px;
             display: inline-block;
@@ -88,18 +88,18 @@ export function generateContactAdminEmail(
             font-weight: 700;
             text-transform: uppercase;
             font-size: 14px;
-            border: 2px solid #000000;
+            border: 2px solid #FFFFFF;
         }
         
         .info-table td {
             padding: 10px;
-            border: 2px solid #000000;
+            border: 2px solid #FFFFFF;
             font-size: 16px;
         }
         
         .message-box {
-            background-color: #F4F4F4;
-            border: 2px solid #000000;
+            background-color: #000000;
+            border: 2px solid #FFFFFF;
             padding: 20px;
             margin-bottom: 30px;
             box-shadow: 6px 6px 0 #FF0000;
@@ -110,13 +110,13 @@ export function generateContactAdminEmail(
             text-transform: uppercase;
             margin-bottom: 10px;
             font-size: 16px;
-            color: #000000;
+            color: #FFFFFF;
         }
         
         .message-content {
             font-size: 16px;
             line-height: 1.6;
-            color: #000000;
+            color: #FFFFFF;
             white-space: pre-wrap;
         }
         
@@ -137,8 +137,8 @@ export function generateContactAdminEmail(
         
         .button:hover {
             background-color: #FF0000;
-            border-color: #000000;
-            box-shadow: 4px 4px 0 #000000;
+            border-color: #FFFFFF;
+            box-shadow: 4px 4px 0 #FFFFFF;
         }
         
         .footer {
@@ -173,11 +173,11 @@ export function generateContactAdminEmail(
     <div class="container">
         <div class="header">
             <div class="logo-text">Podjetniški Klub FMF</div>
-            <div class="alert-badge">Novo sporočilo</div>
+            <div class="alert-badge">Nova prijava</div>
         </div>
         
         <div class="content">
-            <div class="title">Kontaktni obrazec</div>
+            <div class="title">Obrazec za prijavo</div>
             
             <table class="info-table">
                 <tr>
@@ -198,8 +198,8 @@ export function generateContactAdminEmail(
             </table>
             
             <div class="message-box">
-                <div class="message-label">Sporočilo:</div>
-                <div class="message-content">${message}</div>
+                <div class="message-label">Sporočilo/Opomba:</div>
+                <div class="message-content">${message || "Brez dodatnega sporočila."}</div>
             </div>
             
             <center>

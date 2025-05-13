@@ -1,30 +1,21 @@
 import Link from "next/link";
-import { Instagram, Mail, Github, Linkedin } from "lucide-react";
+import { Instagram, Mail, } from "lucide-react";
 
 const navigation = {
   main: [
     { name: "DOMOV", href: "/" },
     { name: "BLOG", href: "/blog" },
     { name: "DOGODKI", href: "/events" },
-    { name: "O NAS", href: "/about" },
+    
   ],
-  legal: [{ name: "POLITIKA ZASEBNOSTI", href: "/privacy" }],
+  legal: [{ name: "POLITIKA ZASEBNOSTI", href: "/politika-zasebnosti" }],
   social: [
     {
       name: "Instagram",
       href: "https://www.instagram.com/podjetniski.klub.fmf/",
       icon: Instagram,
     },
-    {
-      name: "GitHub",
-      href: "https://github.com/",
-      icon: Github,
-    },
-    {
-      name: "LinkedIn",
-      href: "https://www.linkedin.com/",
-      icon: Linkedin,
-    },
+   
   ],
 };
 
@@ -76,10 +67,10 @@ export default function Footer() {
                 <div>
                   <h4 className="font-bold">EMAIL</h4>
                   <a
-                    href="mailto:podjetniski.klub@fmf.uni-lj.si"
+                    href="mailto:nd7855@student.uni-lj.si"
                     className="text-primary font-bold no-underline hover:underline"
                   >
-                    podjetniski.klub@fmf.uni-lj.si
+                    nd7855@student.uni-lj.si
                   </a>
                 </div>
               </div>
@@ -98,22 +89,12 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Newsletter */}
+          {/* Social Media */}
           <div>
             <h3 className="text-xl font-bold mb-6 uppercase">
-              OSTANI NA TEKOČEM
+              SOCIALNA OMREŽJA
             </h3>
-            <form className="space-y-4">
-              <input
-                type="email"
-                placeholder="TVOJ EMAIL"
-                className="neo-brutalist-input w-full"
-                required
-              />
-              <button type="submit" className="neo-brutalist-btn w-full">
-                PRIJAVA NA NOVICE
-              </button>
-            </form>
+            
             <div className="flex items-center gap-4 mt-6">
               {navigation.social.map((item) => (
                 <a

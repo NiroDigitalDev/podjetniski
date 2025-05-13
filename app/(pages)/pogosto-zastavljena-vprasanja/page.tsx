@@ -5,6 +5,20 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pogosta vprašanja | Podjetniški Klub FMF",
+  description:
+    "Odgovori na pogosta vprašanja o Podjetniškem klubu FMF, članstvu, dogodkih in aktivnostih za študente Fakultete za matematiko in fiziko.",
+  keywords:
+    "FAQ, pogosta vprašanja, podjetniški klub, FMF, študentska iniciativa, članstvo, podjetniške aktivnosti",
+  openGraph: {
+    title: "Pogosta vprašanja - Podjetniški klub FMF",
+    description: "Vse kar morate vedeti o Podjetniškem klubu na Fakulteti za matematiko in fiziko",
+    images: ['/images/og-image.png'],
+  },
+};
 
 const faqCategories = [
   {
