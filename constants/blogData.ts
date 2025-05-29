@@ -550,6 +550,40 @@ Nino Djordjević – v imenu Podjetniškega kluba FMF
       "Poročilo s šestega srečanja Podjetniškega kluba FMF z Andrijem Šulićem iz Trampolin Studia, kjer je delil izkušnje o vodenju kreativnega studia.",
     seoKeywords:
       "Andrija Šulić, Trampolin Studio, Podjetniški klub FMF, kreativni studio, dizajn, spletne strani, podjetništvo, AI v kreativnosti",
+  },
+  {
+    id: "15",
+    title: "Matej Berger in Tomaž Hrovatin – Kriptal",
+    slug: "matej-berger-tomaz-hrovatin-kriptal",
+    author: "Nino Djordjević",
+    date: "2025-05-26",
+    excerpt:
+      "V ponedeljek, 26. maja, smo na 7. dogodku Podjetniškega kluba FMF gostili ustanovitelja podjetja Kriptal – Mateja Bergerja in Tomaža Hrovatina. V dveh urah smo se z njima podali na izjemno zanimivo podjetniško in tehnološko potovanje skozi svet kriptovalut, algoritmičnega trgovanja in finančne logike.",
+    coverImage: "/images/og-image.png",
+    category: "Dogodki",
+    content: `
+# 7. dogodek Podjetniškega kluba FMF: V svetu kripta z Matejem Bergerjem in Tomažem Hrovatinom
+
+V ponedeljek, 26. maja, smo na 7. dogodku Podjetniškega kluba FMF gostili ustanovitelja podjetja Kriptal – Mateja Bergerja in Tomaža Hrovatina. V dveh urah smo se z njima podali na izjemno zanimivo podjetniško in tehnološko potovanje skozi svet kriptovalut, algoritmičnega trgovanja in finančne logike.
+
+## Podjetniška zgodba Kriptal
+Dogodek se je pričel s predstavitvijo njune podjetniške zgodbe – kako sta začela razvijati algoritme za avtomatizirano trgovanje s kriptovalutami. Čeprav končnega algoritma nista nikoli v celoti dokončala, ju je razvoj pripeljal do nove priložnosti: iskanja arbitražnih razlik na kripto trgih. Danes imata še vedno aktivne trgovalne robote, a večino časa namenjata raziskovanju in analizi kripto trga ter iskanju inovativnih rešitev za prihodnost.
+
+## Osnove finančnih trgov in kriptovalut
+Z Matejem in Tomažem smo se pogovarjali tudi o osnovah financ – kaj pomeni longati in shortati, kaj so market makerji in kako delujejo likvidnostni mehanizmi v decentraliziranem okolju. Skozi konkretne primere sta pojasnila kompleksne pojme na razumljiv način, kar je še posebej koristilo tistim, ki se šele spoznavamo s tem hitro rastočim področjem.
+
+## Zaključek
+Dogodek je trajal dve uri, a bi lahko poslušali še dlje – toliko zanimivih vpogledov sta nam ponudila gosta.
+
+Iskrena hvala Mateju in Tomažu za obisk, odprt pogovor in vse dragocene nasvete!
+
+V imenu Podjetniškega kluba FMF,  
+Nino Djordjević
+    `,
+    seoDescription:
+      "Poročilo s sedmega dogodka Podjetniškega kluba FMF z Matejem Bergerjem in Tomažem Hrovatinom iz Kriptal, kjer sta delila izkušnje iz sveta kriptovalut in algoritmičnega trgovanja.",
+    seoKeywords:
+      "Matej Berger, Tomaž Hrovatin, Kriptal, Podjetniški klub FMF, kriptovalute, algoritmično trgovanje, finančni trgi, arbitraža, market makerji",
   }
 ];
 

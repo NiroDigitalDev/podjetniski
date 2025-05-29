@@ -108,19 +108,35 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/4">
                 <div className="bg-primary text-primary-foreground p-4 text-center border-black border-[var(--neo-border-width)]">
-                  <span className="text-3xl font-bold">8</span>
-                  <p className="uppercase font-bold">Maj 2025</p>
+                  <span className="text-3xl font-bold">6</span>
+                  <p className="uppercase font-bold">Jun 2025</p>
                 </div>
               </div>
               <div className="md:w-3/4">
                 <h3 className="mb-2">
-                  Q&A SREČANJE Z IVO BOSCAROLOM
+                  DARKO BUTINA
                 </h3>
                 <p className="mb-4">
-                  Ekskluzivno Q&A srečanje z legendarnim podjetnikom Ivo Boscarolom, vizionarjem, 
-                  ki je s svojim podjetjem Pipistrel premikal meje mogočega in slovensko 
-                  inovativnost ponesel v svet.
+                  Teme: umetna inteligenca v poslovanju, prihodnost managementa, razprava o podjetniških idejah (quick pitch).
+                  Udeleženci bodo imeli možnost v kratkem pitchu predstaviti svoje ideje in prejeti povratno mnenje.
                 </p>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12,6 12,12 16,14"></polyline>
+                  </svg>
+                  <span>18:00–20:00</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -148,19 +164,35 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
             <div className="flex flex-col md:flex-row gap-6">
               <div className="md:w-1/4">
                 <div className="bg-primary text-primary-foreground p-4 text-center border-black border-[var(--neo-border-width)]">
-                  <span className="text-3xl font-bold">12</span>
-                  <p className="uppercase font-bold">Maj 2025</p>
+                  <span className="text-3xl font-bold">10</span>
+                  <p className="uppercase font-bold">Jun 2025</p>
                 </div>
               </div>
               <div className="md:w-3/4">
                 <h3 className="mb-2">
-                  ANDRIJA ŠULIĆ: OBLIKOVANJE DIGITALNIH PRODUKTOV
+                  BLAŽ BRODNJAK (PREDSEDNIK UPRAVE NLB)
                 </h3>
                 <p className="mb-4">
-                  Gostimo izjemnega podjetnika in produktnega oblikovalca Andrijo Šulića, 
-                  soustanovitelja podjetja Trampoline Studio, ki ima več kot 15 let izkušenj z vodenjem 
-                  digitalnih projektov za naročnike, kot so Telekom Slovenije, NLB in Volkswagen.
+                  Ekskluzivna priložnost za pogovor o bančništvu, vodenju in strateškem razmišljanju na najvišji ravni.
+                  Dogodek bo potekal s prijavo – več informacij sledi kmalu.
                 </p>
+                <div className="flex items-center gap-2 mb-2">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12,6 12,12 16,14"></polyline>
+                  </svg>
+                  <span>17:00–19:30</span>
+                </div>
                 <div className="flex items-center gap-2">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

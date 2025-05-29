@@ -31,47 +31,13 @@ export default function EventsPage() {
 
           <div className="space-y-8">
             <div className="neo-brutalist-card p-8 animate-fade-in-up">
-              <h2 className="text-2xl font-bold mb-4">Q&A SREČANJE Z IVO BOSCAROLOM</h2>
+              <h2 className="text-2xl font-bold mb-4">DARKO BUTINA</h2>
               
               <div className="flex flex-col md:flex-row gap-6 mb-6">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-2">
                     <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-bold">8. maj 2025 (četrtek)</span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span>17:00–19:00</span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span>FMF, matematična stavba, učilnica 2.02</span>
-                  </div>
-                  <div className="font-bold text-primary">Udeležba brezplačna</div>
-                </div>
-                
-                <div className="flex-1">
-                  <p className="mb-4">
-                    Ekskluzivno Q&A srečanje z legendarnim podjetnikom Ivo Boscarolom, vizionarjem, 
-                    ki je s svojim podjetjem Pipistrel premikal meje mogočega in slovensko 
-                    inovativnost ponesel v svet.
-                  </p>
-                  <p>
-                    Boscarol je pionir v razvoju električnih letal, prejemnik številnih mednarodnih 
-                    nagrad in človek, ki s svojo energijo, drznostjo in predanostjo navdihuje generacije podjetnikov.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="neo-brutalist-card p-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <h2 className="text-2xl font-bold mb-4">ANDRIJA ŠULIĆ: OBLIKOVANJE DIGITALNIH PRODUKTOV</h2>
-              
-              <div className="flex flex-col md:flex-row gap-6 mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-bold">12. maj 2025 (ponedeljek)</span>
+                    <span className="font-bold">6. junij 2025 (petek)</span>
                   </div>
                   <div className="flex items-center gap-2 mb-2">
                     <Clock className="w-5 h-5 text-primary" />
@@ -86,13 +52,41 @@ export default function EventsPage() {
                 
                 <div className="flex-1">
                   <p className="mb-4">
-                    Gostimo izjemnega podjetnika in produktnega oblikovalca Andrijo Šulića, 
-                    soustanovitelja podjetja Trampoline Studio.
+                    Teme: umetna inteligenca v poslovanju, prihodnost managementa, razprava o podjetniških idejah (quick pitch).
                   </p>
                   <p>
-                    Andrija ima več kot 15 let izkušenj z vodenjem digitalnih projektov za naročnike, 
-                    kot so Telekom Slovenije, NLB, Volkswagen in številni ameriški startupi. 
-                    V podjetju Trampoline Studio vodi oblikovanje digitalnih produktov.
+                    Udeleženci bodo imeli možnost v kratkem pitchu predstaviti svoje ideje in prejeti povratno mnenje.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="neo-brutalist-card p-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
+              <h2 className="text-2xl font-bold mb-4">BLAŽ BRODNJAK (PREDSEDNIK UPRAVE NLB)</h2>
+              
+              <div className="flex flex-col md:flex-row gap-6 mb-6">
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Calendar className="w-5 h-5 text-primary" />
+                    <span className="font-bold">10. junij 2025 (torek)</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <Clock className="w-5 h-5 text-primary" />
+                    <span>17:00–19:30</span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-4">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span>FMF, matematična stavba, učilnica 2.02</span>
+                  </div>
+                  <div className="font-bold text-primary">Dogodek bo potekal s prijavo</div>
+                </div>
+                
+                <div className="flex-1">
+                  <p className="mb-4">
+                    Ekskluzivna priložnost za pogovor o bančništvu, vodenju in strateškem razmišljanju na najvišji ravni.
+                  </p>
+                  <p>
+                    Dogodek bo potekal s prijavo – več informacij sledi kmalu.
                   </p>
                 </div>
               </div>
