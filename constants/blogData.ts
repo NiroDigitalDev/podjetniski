@@ -17,6 +17,37 @@ export interface BlogPost extends BlogPostSummary {
 
 export const DEMO_BLOG_POSTS: BlogPost[] = [
   {
+    id: "16",
+    title: "Darko Butina – Osmi dogodek",
+    slug: "darko-butina-osmi-dogodek",
+    author: "Nino Djordjević",
+    date: "2025-06-06",
+    excerpt:
+      "Na osmem dogodku Podjetniškega kluba se nam je pridružil Darko Butina. Pogovor smo začeli s predstavitvijo gosta, kjer nam je Darko zaupal svojo podjetniško pot in danes se ukvarja z uvajanjem umetne inteligence v podjetja.",
+    coverImage: "/images/og-image.png",
+    category: "Dogodki",
+    content: `
+# Osmi Dogodek – 6.6.2025, 18.00–20.00
+
+Gost: Darko Butina
+
+Na osmem dogodku Podjetniškega kluba se nam je pridružil Darko Butina. Pogovor smo začeli s predstavitvijo gosta, v kateri nam je Darko zaupal, kako je začel svojo podjetniško pot s svojim startupom in sredstvi, ki jih je zbral za njegov zagon. Žal startup ni uspel, a Darko je nadaljeval svojo karierno pot in postopoma prišel do ustanovitve lastnega sklada. Danes se ukvarja s tem, da podjetjem pomaga uvajati umetno inteligenco v njihove procese.
+
+Na dogodku smo imeli tudi dva kratka pitcha študentov, na katera je Darko podal natančne povratne informacije, izpostavil potencialne težave ter predlagal rešitve.
+
+Velik del pogovora je bil posvečen pogostim napakam startupov, kot je na primer pomanjkanje likvidnostnega plana. Dotaknili smo se tudi tem, kot so borze, finančni trgi in kriptovalute.
+
+Iskreno se zahvaljujemo Darku Butini za njegov čas in upamo, da se je na dogodku prijetno počutil.
+
+V imenu Podjetniškega kluba FMF,  
+Nino Djordjević
+    `,
+    seoDescription:
+      "Poročilo z osmega dogodka Podjetniškega kluba FMF z Darkom Butino, kjer je delil svojo podjetniško pot, izkušnje s startupom in nasvete o uvajanju umetne inteligence v podjetja.",
+    seoKeywords:
+      "Darko Butina, Podjetniški klub FMF, umetna inteligenca, startup, podjetništvo, likvidnostni plan, finančni trgi, kriptovalute, študentski pitch",
+  },
+  {
     id: "7",
     title: "Gost Žiga Vavpotič",
     slug: "gost-ziga-vavpotic",
