@@ -85,10 +85,21 @@ export default function EventsPage() {
                   <p className="mb-4">
                     Ekskluzivna priložnost za pogovor o bančništvu, vodenju in strateškem razmišljanju na najvišji ravni.
                   </p>
-                  <p>
+                  <p className="mb-6">
                     Dogodek bo potekal s prijavo – več informacij sledi kmalu.
                   </p>
                 </div>
+              </div>
+              
+              <div className="text-center">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSe1sgv81dwW3rQ7qL0R3oMpvmQcGqZZVepG40Pf5TOsSSmWXw/viewform?usp=sharing&ouid=105392280692077432038"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="neo-brutalist-btn no-underline"
+                >
+                  PRIJAVI SE
+                </a>
               </div>
             </div>
           </div>

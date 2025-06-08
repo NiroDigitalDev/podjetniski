@@ -193,7 +193,7 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
                   </svg>
                   <span>17:00–19:30</span>
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 mb-4">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -211,6 +211,17 @@ export default function LandingPage({ blogPosts }: LandingPageProps) {
                   <span>
                     FMF, matematična stavba, učilnica 2.02
                   </span>
+                </div>
+                
+                <div className="mt-4">
+                  <a
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSe1sgv81dwW3rQ7qL0R3oMpvmQcGqZZVepG40Pf5TOsSSmWXw/viewform?usp=sharing&ouid=105392280692077432038"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="neo-brutalist-btn no-underline"
+                  >
+                    PRIJAVI SE
+                  </a>
                 </div>
               </div>
             </div>
