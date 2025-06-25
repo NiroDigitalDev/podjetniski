@@ -17,6 +17,46 @@ export interface BlogPost extends BlogPostSummary {
 
 export const DEMO_BLOG_POSTS: BlogPost[] = [
   {
+    id: "17",
+    title: "Deveti Dogodek – Blaž Brodnjak (NLB)",
+    slug: "deveti-dogodek-blaz-brodnjak-nlb",
+    author: "Nino Djordjević",
+    date: "2025-06-10",
+    excerpt:
+      "Na devetem dogodku Podjetniškega kluba FMF smo gostili Blaža Brodnjaka, predsednika uprave NLB. Razprava je bila osredotočena na politično in finančno okolje ter izzive startupov v Sloveniji.",
+    coverImage: "/images/brodnjak.jpg",
+    category: "Dogodki",
+    content: `
+# Deveti Dogodek – 10.6.2025, 17.00–19.30
+
+Gost: Blaž Brodnjak (NLB)
+
+V torek, 10. junija 2025, smo se v sklopu devetega srečanja Podjetniškega kluba FMF srečali z Blažem Brodnjakom, predsednikom uprave največje slovenske bančne skupine – NLB. Dogodka se je udeležilo 11 članov kluba. Tokratna razprava je bila izrazito vsebinska, zaznamovana z globokimi premisleki o stanju evropske in slovenske politike, finančnih trgih ter neugodnem poslovnem okolju za startupe v Sloveniji.
+
+## Makroekonomski kontekst in politična realnost
+Pogovor se je hitro premaknil k analizi aktualne evropske in slovenske politične krajine. Brodnjak je delil svoje izkušnje in vpoglede, ki jih je pridobil kot vodilni v eni izmed najpomembnejših finančnih institucij v regiji. Opozoril je na pomen politične stabilnosti za gospodarsko rast, izpostavil nekatere pomanjkljivosti v slovenskem pravnem okolju ter izrazil skrb nad birokratskimi ovirami, ki dušijo podjetništvo.
+
+## Finančni trgi in vloga NLB
+Zanimiv del pogovora je bil posvečen dogajanju na finančnih trgih. Brodnjak je izpostavil strateško vlogo NLB v regiji ter poudaril pomen zdravega bančnega sistema za dolgoročno stabilnost. Razpravljali smo tudi o investicijskih tokovih, vlogi centralnih bank in vplivu geopolitičnih napetosti na kapitalske trge.
+
+## Slovensko startup okolje: izzivi in priložnosti
+Eden izmed ključnih poudarkov srečanja je bil izrazito kritičen pogled na slovensko okolje za startupe. Po Brodnjakovem mnenju so mlada podjetja v Sloveniji pogosto ujeta v regulatorni in davčni labirint, ki ne omogoča hitre rasti in prilagodljivosti. Posebej je izpostavil težave pri dostopu do kapitala, visoke obdavčitve in premalo spodbud za inovativnost. 
+
+## Neposreden, a navdihujoč ton
+Dogodek je bil vsebinsko intenziven, a hkrati izredno navdihujoč. Brodnjakov neposreden slog komunikacije je spodbudil odprto debato, v kateri so člani lahko postavljali vprašanja in delili svoje dvome glede poslovne prihodnosti v Sloveniji. Zdi se, da so prav takšni pogovori – iskreni in neposredni – tisti, ki mladim podjetniškim umom največ pomenijo.
+
+Dogodek smo zaključili v dobrem vzdušju, polni novih uvidov in motivacije za prihodnje delovanje – ne glede na izzive, ki nas čakajo doma ali v tujini.
+
+Iskrena hvala Blažu Brodnjaku za njegov čas, pogumne poglede in pripravljenost deliti svoje znanje z mladimi podjetniškimi navdušenci!
+
+Nino Djordjević – v imenu Podjetniškega kluba FMF
+    `,
+    seoDescription:
+      "Poročilo z devetega dogodka Podjetniškega kluba FMF z Blažem Brodnjakom, predsednikom uprave NLB, o političnem in finančnem okolju ter izzivih startupov v Sloveniji.",
+    seoKeywords:
+      "Blaž Brodnjak, NLB, Podjetniški klub FMF, startupi, politično okolje, finančni trgi, bančništvo, podjetništvo, Slovenija, makroekonomija, birokracija, inovacije",
+  },
+  {
     id: "16",
     title: "Darko Butina – Osmi dogodek",
     slug: "darko-butina-osmi-dogodek",

@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Stran Ne Obstaja (404) | Telefinder',
+  title: 'Stran Ne Obstaja (404) | Podjetniški klub FMF',
   description: 'Te strani ni bilo mogoče najti.',
 }
 

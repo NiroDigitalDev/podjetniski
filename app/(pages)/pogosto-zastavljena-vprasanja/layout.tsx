@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pogosto Zastavljena Vprašanja", // Using template from root layout, just provide specific part
   description:
-    "Odgovori na pogosta vprašanja o Telefinder storitvah in ponudbah.", // TODO: Optimize this description further
+    "Odgovori na pogosta vprašanja o Podjetniškem klubu FMF.", // TODO: Optimize this description further
 };
 
 // This layout simply wraps the page component for this route

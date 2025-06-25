@@ -8,11 +8,11 @@ import { Suspense } from "react";
 // Define default metadata
 export const metadata: Metadata = {
   title: {
-    default: "Telefinder | Primerjajte Mobilne Pakete v Sloveniji", // Default title
-    template: "%s | Telefinder", // Template for page-specific titles
+    default: "Podjetniški klub FMF | Navdih, povezovanje in podjetniške zgodbe", // Default title
+    template: "%s | Podjetniški klub FMF", // Template for page-specific titles
   },
   description:
-    "Telefinder vam namesto vas najde najboljšega mobilnega operaterja in paket glede na vaše potrebe. Primerjajte ponudbe, cene in pokritost signala v Sloveniji.", // Default description
+    "Podjetniški klub FMF je skupnost za študente, ki jih zanima podjetništvo, inovacije in osebni razvoj. Pridruži se dogodkom, srečanjem in delavnicam z uspešnimi podjetniki in strokovnjaki.", // Default description
 };
 
 const raleway = Raleway({

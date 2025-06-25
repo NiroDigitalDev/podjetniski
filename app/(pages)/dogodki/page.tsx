@@ -30,77 +30,8 @@ export default function EventsPage() {
           </div>
 
           <div className="space-y-8">
-            <div className="neo-brutalist-card p-8 animate-fade-in-up">
-              <h2 className="text-2xl font-bold mb-4">DARKO BUTINA</h2>
-              
-              <div className="flex flex-col md:flex-row gap-6 mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-bold">6. junij 2025 (petek)</span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span>18:00–20:00</span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span>FMF, matematična stavba, učilnica 2.02</span>
-                  </div>
-                  <div className="font-bold text-primary">Udeležba brezplačna</div>
-                </div>
-                
-                <div className="flex-1">
-                  <p className="mb-4">
-                    Teme: umetna inteligenca v poslovanju, prihodnost managementa, razprava o podjetniških idejah (quick pitch).
-                  </p>
-                  <p>
-                    Udeleženci bodo imeli možnost v kratkem pitchu predstaviti svoje ideje in prejeti povratno mnenje.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="neo-brutalist-card p-8 animate-fade-in-up" style={{ animationDelay: "200ms" }}>
-              <h2 className="text-2xl font-bold mb-4">BLAŽ BRODNJAK (PREDSEDNIK UPRAVE NLB)</h2>
-              
-              <div className="flex flex-col md:flex-row gap-6 mb-6">
-                <div className="flex-1">
-                  <div className="flex items-center gap-2 mb-2">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-bold">10. junij 2025 (torek)</span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-2">
-                    <Clock className="w-5 h-5 text-primary" />
-                    <span>17:00–19:30</span>
-                  </div>
-                  <div className="flex items-center gap-2 mb-4">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span>FMF, matematična stavba, učilnica 2.02</span>
-                  </div>
-                  <div className="font-bold text-primary">Dogodek bo potekal s prijavo</div>
-                </div>
-                
-                <div className="flex-1">
-                  <p className="mb-4">
-                    Ekskluzivna priložnost za pogovor o bančništvu, vodenju in strateškem razmišljanju na najvišji ravni.
-                  </p>
-                  <p className="mb-6">
-                    Dogodek bo potekal s prijavo – več informacij sledi kmalu.
-                  </p>
-                </div>
-              </div>
-              
-              <div className="text-center">
-                <a
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSe1sgv81dwW3rQ7qL0R3oMpvmQcGqZZVepG40Pf5TOsSSmWXw/viewform?usp=sharing&ouid=105392280692077432038"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="neo-brutalist-btn no-underline"
-                >
-                  PRIJAVI SE
-                </a>
-              </div>
+            <div className="neo-brutalist-card p-6 mb-6 font-bold text-xl text-center">
+              V tem letu ni več dogodkov. Hvala za obisk in spremljaj nas za nove termine!
             </div>
           </div>
 
