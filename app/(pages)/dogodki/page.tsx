@@ -1,4 +1,3 @@
-import { Calendar, Clock, MapPin } from "lucide-react";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
